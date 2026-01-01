@@ -54,9 +54,9 @@ export default function ApiStatus() {
                             Online
                         </div>
                     ) : (
-                        <div className="flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-red-50 dark:bg-red-900/20 text-red-700 dark:text-red-400 border border-red-100 dark:border-red-900/30 text-xs font-medium">
-                            <AlertCircle className="h-3 w-3" />
-                            Offline
+                        <div className="flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-yellow-50 dark:bg-yellow-900/20 text-yellow-700 dark:text-yellow-400 border border-yellow-100 dark:border-yellow-900/30 text-xs font-medium">
+                            <Activity className="h-3 w-3 animate-pulse" />
+                            Connecting to Backend...
                         </div>
                     )}
                 </div>
@@ -86,10 +86,10 @@ export default function ApiStatus() {
                 </div>
 
                 {!isOnline && (
-                    <Alert variant="destructive" className="bg-red-50 dark:bg-red-900/10 border-red-100 dark:border-red-900/20 text-red-600 dark:text-red-400">
-                        <Activity className="h-4 w-4" />
+                    <Alert variant="default" className="bg-slate-50 dark:bg-slate-900 border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-400">
+                        <Activity className="h-4 w-4 text-yellow-500" />
                         <AlertDescription className="text-xs font-medium ml-2">
-                            Service unavailable
+                            Backend services are initializing. Prediction features will be available once the system is online.
                         </AlertDescription>
                     </Alert>
                 )}
